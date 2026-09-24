@@ -1,12 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
+from config import settings
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-}
+HEADERS = { "User-Agent":settings.user_agent}
 
-BASE_URL = "https://www.ceasa.sc.gov.br"
-
+BASE_URL = settings.ceasa_base_url
 
 def pegar_sopa(url):
     resposta = requests.get(url, headers=HEADERS)
