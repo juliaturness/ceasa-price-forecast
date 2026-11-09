@@ -1,10 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 from config import settings
+import logging
 
-HEADERS = { "User-Agent":settings.user_agent}
+logger = logging.getLogger(__name__)
+
+HEADERS = {"User-Agent": settings.user_agent}
 
 BASE_URL = settings.ceasa_base_url
+
 
 def pegar_sopa(url):
     resposta = requests.get(url, headers=HEADERS)
